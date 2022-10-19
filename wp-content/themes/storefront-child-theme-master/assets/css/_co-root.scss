@@ -1,0 +1,204 @@
+/* --------------------- Global root start ---------------------*/
+
+:root {
+    --white-color: #fff;
+    --black-color: #000;
+    --color-primary: #E92E2E;
+    --color-2A2A2A: #2A2A2A;
+    --color-949494: #949494;
+    --color-F3F3F3: #F3F3F3;
+    --color-FAFAFA: #FAFAFA;
+    --color-626262: #626262;
+    --color-E1E1E1: #E1E1E1;
+    --font-Lato: 'Lato', sans-serif;
+}
+
+$white-fff: var(--white-color);
+$black-000:var(--black-color);
+$color-primary: var(--color-primary);
+$color-2A2A2A: var(--color-2A2A2A);
+$color-949494: var(--color-949494);
+$color-F3F3F3: var(--color-F3F3F3);
+$color-FAFAFA: var(--color-FAFAFA);
+$color-626262: var(--color-626262);
+$color-E1E1E1: var(--color-E1E1E1);
+$font-Lato: var(--font-Lato);
+
+/* --------------------- Global root start ---------------------*/
+
+@mixin flex-body($mtb, $mlr) {
+    display: flex;
+    flex-wrap: wrap;
+    margin: $mtb $mlr;
+}
+
+@mixin flex-cart($m_width, $f_width, $width, $ptb, $plr) {
+    max-width: $m_width;
+    flex: 0 0 $f_width;
+    width: $width;
+    padding: $ptb $plr;
+}
+
+@mixin font-css($fs, $lh, $fw) {
+    font-size: $fs;
+    line-height: $lh;
+    font-weight: $fw;
+}
+
+.btn-theme {
+    color: $white-fff;
+    font-family: $font-Lato;
+    @include font-css(16px, 19px, 600);
+    padding: 13px 30px 15px;
+    transition: .5s;
+    display: inline-block;
+    cursor: pointer;
+    -webkit-appearance: none;
+    border: unset;
+    &.primary {
+        background: $color-primary;
+        box-shadow: 0px 3px 13px #92212147;
+        border-radius: 5px;
+    }
+    &.full-width {
+        display: block;
+        text-align: center;
+        width: 100%;
+    }
+    &.secondary {
+        background: $color-2A2A2A;
+        box-shadow: 0px 3px 9px rgba(42, 42, 42, 0.4);
+        border-radius: 5px;
+    }
+    &:hover {
+        transition: .5s;
+        box-shadow: unset;
+    }
+    &[disabled="disabled"] {
+        opacity: .5;
+        cursor: no-drop;
+    }
+}
+
+[tabindex="-1"]:focus {
+    outline: none !important;
+}
+
+*,
+*::before,
+*::after {
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+:focus-visible {
+    overflow: unset;
+    outline: unset;
+    box-shadow: unset;
+    border: unset;
+}
+
+html body {
+    font-family: $font-Lato;
+    line-height: inherit;
+    background-color: transparent;
+    padding: 0px;
+    background-color: $color-FAFAFA;
+    margin: 0px;
+}
+
+body ul,
+body li {
+    padding: 0px;
+    margin: 0px;
+    list-style-type: none;
+}
+
+body h1 {
+    @include font-css(50px, 60px, 800);
+}
+
+body h2 {
+    @include font-css(30px, 27px, 500);
+}
+
+body h3 {
+    @include font-css(20px, 27px, 700);
+}
+
+body h4 {
+    @include font-css(18px, 27px, 400);
+}
+
+body h5 {
+    @include font-css(16px, 19px, 400);
+    text-transform: uppercase;
+    letter-spacing: 0.02em;
+}
+
+body h6 {
+    @include font-css(14px, 17px, 400);
+    letter-spacing: 0.02em;
+    text-decoration-line: underline;
+}
+
+body h1,
+body h2,
+body h3,
+body h4,
+body h5,
+body h6 {
+    padding: 0px;
+    margin: 0px;
+    font-family: $font-Lato;
+}
+
+html body p {
+    @include font-css(16px, 24px, 400);
+    padding: 0px;
+    margin: 0px;
+}
+
+html body a {
+    -webkit-transition: .2s all ease;
+    transition: .2s all ease;
+    text-decoration: none;
+}
+
+.post,
+.page {
+    margin-bottom: 0 !important;
+}
+
+.ft-inner-container {
+    max-width: 1140px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.blockUI.blockOverlay {
+    position: fixed !important;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    display: block;
+}
+
+@media only screen and (max-width: 767px) {
+    body h1 {
+        @include font-css(30px, 37px, 500);
+    }
+    body h2 {
+        @include font-css(20px, 27px, 700);
+    }
+    body h3 {
+        @include font-css(16px, 24px, 400);
+    }
+    html body p {
+        @include font-css(14px, 17px, 400);
+        padding: 0px;
+        margin: 0px;
+    }
+}
